@@ -9,8 +9,10 @@ export default function HomePage() {
     email: '',
     address: '',
     city: '',
+    county: '',
     zip: '',
     issue: '',
+    jobType: 'residential',
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -26,12 +28,28 @@ export default function HomePage() {
     e.preventDefault();
     setSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    console.log('Lead submitted:', formData);
-    setSubmitted(true);
-    setSubmitting(false);
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        alert('There was an error submitting your request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('There was an error submitting your request. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -260,6 +278,57 @@ export default function HomePage() {
                         className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
                         placeholder="77001"
                       />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      County *
+                    </label>
+                    <select
+                      name="county"
+                      required
+                      value={formData.county}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
+                    >
+                      <option value="">Select County</option>
+                      <option value="Harris">Harris</option>
+                      <option value="Montgomery">Montgomery</option>
+                      <option value="Fort Bend">Fort Bend</option>
+                      <option value="Waller">Waller</option>
+                      <option value="Brazoria">Brazoria</option>
+                      <option value="Liberty">Liberty</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Property Type *
+                    </label>
+                    <div className="flex gap-4">
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="jobType"
+                          value="residential"
+                          checked={formData.jobType === 'residential'}
+                          onChange={handleChange}
+                          className="w-5 h-5 text-orange-500 border-gray-300 focus:ring-orange-500"
+                        />
+                        <span className="text-lg text-gray-700">Residential</span>
+                      </label>
+                      <label className="flex items-center gap-2 cursor-pointer">
+                        <input
+                          type="radio"
+                          name="jobType"
+                          value="commercial"
+                          checked={formData.jobType === 'commercial'}
+                          onChange={handleChange}
+                          className="w-5 h-5 text-orange-500 border-gray-300 focus:ring-orange-500"
+                        />
+                        <span className="text-lg text-gray-700">Commercial</span>
+                      </label>
                     </div>
                   </div>
 
