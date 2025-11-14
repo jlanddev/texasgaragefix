@@ -152,22 +152,31 @@ export async function POST(request) {
 
     // Step 7: Charge contractor via Stripe instantly
     let stripeChargeId = null;
-    try {
-      // TODO: Get contractor's Stripe customer ID from database
-      // For now, skip Stripe charging in test mode
-      console.log('💳 Would charge contractor:', assignedContractor.email, '$' + pricing.platformPrice);
+    let chargeSuccess = false;
 
-      // When Stripe is ready:
-      // const charge = await stripe.charges.create({
-      //   amount: Math.round(pricing.platformPrice * 100),
-      //   currency: 'usd',
-      //   customer: assignedContractor.stripe_customer_id,
-      //   description: `Lead: ${leadData.name} - ${leadData.county}`,
-      // });
-      // stripeChargeId = charge.id;
+    try {
+      // Import stripe-billing functions
+      const { chargeContractorForLead } = await import('../../../lib/stripe-billing.js');
+
+      const chargeResult = await chargeContractorForLead(
+        assignedContractor.id,
+        lead.id,
+        pricing.platformPrice
+      );
+
+      if (chargeResult.success) {
+        stripeChargeId = chargeResult.chargeId;
+        chargeSuccess = true;
+        console.log('✅ Charged contractor:', assignedContractor.email, '$' + pricing.platformPrice);
+        console.log('   Stripe charge ID:', stripeChargeId);
+      } else {
+        console.error('❌ Charge failed:', chargeResult.reason);
+        // If charge failed, could try next contractor here
+        // For now, we'll record the failed attempt
+      }
     } catch (stripeError) {
-      console.error('Stripe charge error:', stripeError);
-      // Continue anyway - we'll handle failed payments separately
+      console.error('❌ Stripe charge error:', stripeError);
+      // Continue anyway - lead still gets assigned
     }
 
     // Step 8: Create transaction record
