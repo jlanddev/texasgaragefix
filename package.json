@@ -13,9 +13,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.81.1",
     "next": "^16.0.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "twilio": "^5.10.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.22",
