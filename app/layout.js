@@ -9,10 +9,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google Ads Conversion Tracking - Replace AW-CONVERSION_ID with your actual ID */}
+        {/* Google tag (gtag.js) */}
         <script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17733369236"
         ></script>
         <script
           dangerouslySetInnerHTML={{
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-CONVERSION_ID');
+              gtag('config', 'AW-17733369236');
             `,
           }}
         />
