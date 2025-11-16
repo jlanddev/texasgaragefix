@@ -40,13 +40,9 @@ export default function HomePage() {
       const result = await response.json();
 
       if (result.success) {
-        // Google Ads conversion tracking
-        if (typeof window !== 'undefined' && window.gtag) {
-          window.gtag('event', 'conversion', {
-            'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL', // Replace with your actual conversion ID
-            'value': 30.0,
-            'currency': 'USD',
-          });
+        // Track conversion
+        if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+          window.gtag_report_conversion();
         }
 
         setSubmitted(true);
