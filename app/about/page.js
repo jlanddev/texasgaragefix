@@ -58,25 +58,29 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="text-4xl font-black mb-8">WHY CHOOSE US</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="border-l-4 border-orange-600 pl-6">
+            <div className="border-l-4 border-orange-600 pl-6 relative group">
+              <div className="absolute -left-1 top-0 w-8 h-8 bg-orange-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <h3 className="text-2xl font-black mb-3">FAST RESPONSE</h3>
               <p className="text-lg">
                 We call you back in under 10 minutes. Most repairs done same day. No waiting around.
               </p>
             </div>
-            <div className="border-l-4 border-orange-600 pl-6">
+            <div className="border-l-4 border-orange-600 pl-6 relative group">
+              <div className="absolute -left-1 top-0 w-8 h-8 bg-orange-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <h3 className="text-2xl font-black mb-3">FAIR PRICING</h3>
               <p className="text-lg">
                 Upfront quotes. No hidden fees. No pressure. You know what you're paying before we start.
               </p>
             </div>
-            <div className="border-l-4 border-orange-600 pl-6">
+            <div className="border-l-4 border-orange-600 pl-6 relative group">
+              <div className="absolute -left-1 top-0 w-8 h-8 bg-orange-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <h3 className="text-2xl font-black mb-3">ALL BRANDS</h3>
               <p className="text-lg">
                 LiftMaster, Chamberlain, Genie, Craftsman - we fix them all. Parts on every truck.
               </p>
             </div>
-            <div className="border-l-4 border-orange-600 pl-6">
+            <div className="border-l-4 border-orange-600 pl-6 relative group">
+              <div className="absolute -left-1 top-0 w-8 h-8 bg-orange-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <h3 className="text-2xl font-black mb-3">24/7 EMERGENCY</h3>
               <p className="text-lg">
                 Door stuck open at midnight? Spring broke on Sunday? We handle emergencies any time.
@@ -105,19 +109,31 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="text-4xl font-black mb-8">WHAT WE DO</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-black text-white p-8">
+            <div className="bg-black text-white p-8 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-orange-600 opacity-10 group-hover:opacity-20 transition-opacity"></div>
+              <svg className="w-12 h-12 mb-4 opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
+              </svg>
               <h3 className="text-2xl font-black mb-4">REPAIRS</h3>
               <p className="text-lg">
                 Springs, cables, panels, tracks, rollers - we fix it all. Same day.
               </p>
             </div>
-            <div className="bg-black text-white p-8">
+            <div className="bg-black text-white p-8 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-orange-600 opacity-10 group-hover:opacity-20 transition-opacity"></div>
+              <svg className="w-12 h-12 mb-4 opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
               <h3 className="text-2xl font-black mb-4">INSTALLATION</h3>
               <p className="text-lg">
                 New garage doors for residential and commercial. Professional install.
               </p>
             </div>
-            <div className="bg-black text-white p-8">
+            <div className="bg-black text-white p-8 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-orange-600 opacity-10 group-hover:opacity-20 transition-opacity"></div>
+              <svg className="w-12 h-12 mb-4 opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              </svg>
               <h3 className="text-2xl font-black mb-4">OPENERS</h3>
               <p className="text-lg">
                 Repair or replace any brand. Smart upgrades available.

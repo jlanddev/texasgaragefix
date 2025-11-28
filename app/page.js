@@ -104,11 +104,14 @@ export default function HomePage() {
               HOUSTON'S FASTEST RESPONSE TIME
             </div>
 
-            <h1 className="text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-none">
-              BROKEN<br/>
-              GARAGE<br/>
-              DOOR?
-            </h1>
+            <div className="relative mb-6">
+              <div className="absolute -left-4 top-0 w-2 h-full bg-orange-600"></div>
+              <h1 className="text-6xl lg:text-7xl font-black text-gray-900 leading-none">
+                BROKEN<br/>
+                GARAGE<br/>
+                DOOR?
+              </h1>
+            </div>
 
             <div className="bg-orange-600 text-white p-8 mb-8 transform rotate-1">
               <p className="text-3xl font-black mb-2">10 MINUTES</p>
@@ -116,29 +119,45 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-orange-600 mt-3 flex-shrink-0"></div>
+              <div className="flex items-start gap-4 group">
+                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" />
+                  </svg>
+                </div>
                 <div>
                   <p className="text-xl font-bold text-gray-900">Spring snapped?</p>
                   <p className="text-gray-600">Same-day replacement. All brands.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-orange-600 mt-3 flex-shrink-0"></div>
+              <div className="flex items-start gap-4 group">
+                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" />
+                  </svg>
+                </div>
                 <div>
                   <p className="text-xl font-bold text-gray-900">Door stuck?</p>
                   <p className="text-gray-600">We fix it fast. No BS.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-orange-600 mt-3 flex-shrink-0"></div>
+              <div className="flex items-start gap-4 group">
+                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" />
+                  </svg>
+                </div>
                 <div>
                   <p className="text-xl font-bold text-gray-900">Opener dead?</p>
                   <p className="text-gray-600">Repair or replace today.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-2 h-2 bg-orange-600 mt-3 flex-shrink-0"></div>
+              <div className="flex items-start gap-4 group">
+                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" />
+                  </svg>
+                </div>
                 <div>
                   <p className="text-xl font-bold text-gray-900">Panel damaged?</p>
                   <p className="text-gray-600">Quick replacement, perfect match.</p>
@@ -336,8 +355,12 @@ export default function HomePage() {
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <div className="bg-gray-900 text-white py-12 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-orange-600 rounded-full -translate-x-32 -translate-y-32"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-600 rounded-full translate-x-48 translate-y-48"></div>
+        </div>
+        <div className="container mx-auto px-4 max-w-7xl relative">
           <div className="grid grid-cols-3 gap-8 text-center">
             <div className="border-r border-gray-700">
               <div className="text-5xl font-black text-orange-600 mb-2">500+</div>
