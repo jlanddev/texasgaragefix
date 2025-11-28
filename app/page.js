@@ -88,6 +88,18 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
+      {/* Navigation */}
+      <nav className="bg-white shadow-md py-4 px-4">
+        <div className="container mx-auto flex items-center justify-between max-w-6xl">
+          <a href="/" className="text-2xl font-bold text-blue-600">Texas Garage Fix</a>
+          <div className="flex gap-6">
+            <a href="/" className="text-gray-700 hover:text-blue-600 font-semibold">Home</a>
+            <a href="/services" className="text-gray-700 hover:text-blue-600 font-semibold">Services</a>
+            <a href="/about" className="text-gray-700 hover:text-blue-600 font-semibold">About</a>
+          </div>
+        </div>
+      </nav>
+
       {/* Trust Bar */}
       <div className="bg-blue-600 text-white py-3 px-4 text-center font-semibold flex items-center justify-center gap-8 flex-wrap">
         <span className="flex items-center gap-2">
@@ -394,6 +406,11 @@ export default function HomePage() {
         <div className="container mx-auto px-4 text-center">
           <div className="text-2xl font-bold text-white mb-2">Texas Garage Fix</div>
           <p className="mb-4">Fast, professional garage door repair across Houston</p>
+          <div className="mb-4">
+            <a href="/" className="text-gray-400 hover:text-white mx-3">Home</a>
+            <a href="/services" className="text-gray-400 hover:text-white mx-3">Services</a>
+            <a href="/about" className="text-gray-400 hover:text-white mx-3">About</a>
+          </div>
           <p className="text-sm">&copy; 2024 Texas Garage Fix. All rights reserved.</p>
         </div>
       </footer>
