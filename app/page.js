@@ -40,11 +40,9 @@ export default function HomePage() {
       const result = await response.json();
 
       if (result.success) {
-        // Track conversion
         if (typeof window !== 'undefined' && window.gtag_report_conversion) {
           window.gtag_report_conversion();
         }
-
         setSubmitted(true);
       } else {
         alert('There was an error submitting your request. Please try again.');
@@ -59,26 +57,18 @@ export default function HomePage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center px-4">
-        <div className="max-w-lg w-full bg-white rounded-2xl shadow-2xl p-8 text-center">
-          <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Request Received!
-          </h2>
-          <p className="text-xl text-gray-700 mb-6">
-            A contractor will call you within 10 minutes.
+      <div className="min-h-screen bg-white flex items-center justify-center px-4">
+        <div className="max-w-2xl w-full text-center">
+          <div className="text-8xl mb-8">✓</div>
+          <h1 className="text-5xl font-black text-gray-900 mb-4">
+            WE GOT IT
+          </h1>
+          <p className="text-2xl text-gray-700 mb-8">
+            Expect a call in the next 10 minutes
           </p>
-          <div className="bg-blue-50 border-2 border-blue-500 rounded-lg p-6">
-            <p className="text-lg font-semibold text-gray-900 mb-2">
-              Keep your phone nearby!
-            </p>
-            <p className="text-gray-600">
-              Our contractors typically respond in 5-10 minutes during business hours.
-              They'll confirm your issue and schedule a same-day visit.
+          <div className="bg-gray-50 p-8 rounded">
+            <p className="text-xl font-bold text-gray-900">
+              Keep your phone handy - our tech is calling you now
             </p>
           </div>
         </div>
@@ -87,331 +77,294 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
+    <div className="min-h-screen bg-white">
+      {/* Simple Top Bar */}
+      <div className="bg-black text-white py-2 px-4 text-center text-sm font-bold">
+        SAME DAY SERVICE • 24/7 EMERGENCY REPAIRS • ALL BRANDS
+      </div>
+
       {/* Navigation */}
-      <nav className="bg-white shadow-md py-4 px-4">
-        <div className="container mx-auto flex items-center justify-between max-w-6xl">
-          <a href="/" className="text-2xl font-bold text-blue-600">Texas Garage Fix</a>
-          <div className="flex gap-6">
-            <a href="/" className="text-gray-700 hover:text-blue-600 font-semibold">Home</a>
-            <a href="/services" className="text-gray-700 hover:text-blue-600 font-semibold">Services</a>
-            <a href="/about" className="text-gray-700 hover:text-blue-600 font-semibold">About</a>
+      <nav className="border-b border-gray-200 py-4 px-4">
+        <div className="container mx-auto flex items-center justify-between max-w-7xl">
+          <a href="/" className="text-3xl font-black text-gray-900">TEXAS GARAGE FIX</a>
+          <div className="flex gap-8 text-sm font-bold uppercase tracking-wide">
+            <a href="/" className="text-gray-900 hover:text-orange-600">Home</a>
+            <a href="/services" className="text-gray-900 hover:text-orange-600">Services</a>
+            <a href="/about" className="text-gray-900 hover:text-orange-600">About</a>
           </div>
         </div>
       </nav>
 
-      {/* Trust Bar */}
-      <div className="bg-blue-600 text-white py-3 px-4 text-center font-semibold flex items-center justify-center gap-8 flex-wrap">
-        <span className="flex items-center gap-2">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-          </svg>
-          Same-Day Service
-        </span>
-        <span className="flex items-center gap-2">
-          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-          Satisfaction Guaranteed
-        </span>
-      </div>
+      {/* Hero */}
+      <div className="container mx-auto px-4 py-16 max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left Side */}
+          <div>
+            <div className="inline-block bg-orange-600 text-white px-6 py-2 font-black text-sm mb-6 transform -rotate-1">
+              HOUSTON'S FASTEST RESPONSE TIME
+            </div>
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-start">
-            {/* Left: Headline & Benefits */}
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
-                <span className="text-orange-600">Texas' Choice for</span><br />
-                <span className="text-blue-600">Garage Repairs & Installations</span>
-              </h1>
+            <h1 className="text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-none">
+              BROKEN<br/>
+              GARAGE<br/>
+              DOOR?
+            </h1>
 
-              <div className="bg-orange-500 text-white inline-flex items-center gap-2 px-4 py-2 rounded-lg font-bold text-lg mb-6 animate-pulse">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                </svg>
-                24/7 Garage Door Servicing, and Same Day Repairs
-              </div>
+            <div className="bg-orange-600 text-white p-8 mb-8 transform rotate-1">
+              <p className="text-3xl font-black mb-2">10 MINUTES</p>
+              <p className="text-lg">That's how fast we call you back. Not kidding.</p>
+            </div>
 
-              <p className="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
-                One of our professional techs will reach out within{' '}
-                <span className="text-orange-600 font-bold whitespace-nowrap">10 minutes</span>
-              </p>
-
-              {/* Benefits */}
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg text-gray-900">Fast Response</div>
-                    <div className="text-gray-600">Contractor calls you back in minutes</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg text-gray-900">Same-Day Service</div>
-                    <div className="text-gray-600">Most repairs completed today</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-lg text-gray-900">All Repairs</div>
-                    <div className="text-gray-600">Springs, openers, panels, tracks, & more</div>
-                  </div>
+            <div className="space-y-4 mb-8">
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-orange-600 mt-3 flex-shrink-0"></div>
+                <div>
+                  <p className="text-xl font-bold text-gray-900">Spring snapped?</p>
+                  <p className="text-gray-600">Same-day replacement. All brands.</p>
                 </div>
               </div>
-
-              {/* Trust Badges - Desktop */}
-              <div className="hidden md:block bg-gray-100 rounded-xl p-6">
-                <div className="text-sm font-semibold text-gray-600 mb-3">TRUSTED BY HOUSTON HOMEOWNERS</div>
-                <div className="flex items-center gap-4">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600">500+</div>
-                    <div className="text-sm text-gray-600">Jobs This Month</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600">4.9★</div>
-                    <div className="text-sm text-gray-600">Average Rating</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600">&lt;10min</div>
-                    <div className="text-sm text-gray-600">Response Time</div>
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-orange-600 mt-3 flex-shrink-0"></div>
+                <div>
+                  <p className="text-xl font-bold text-gray-900">Door stuck?</p>
+                  <p className="text-gray-600">We fix it fast. No BS.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-orange-600 mt-3 flex-shrink-0"></div>
+                <div>
+                  <p className="text-xl font-bold text-gray-900">Opener dead?</p>
+                  <p className="text-gray-600">Repair or replace today.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-orange-600 mt-3 flex-shrink-0"></div>
+                <div>
+                  <p className="text-xl font-bold text-gray-900">Panel damaged?</p>
+                  <p className="text-gray-600">Quick replacement, perfect match.</p>
                 </div>
               </div>
             </div>
 
-            {/* Right: Lead Form */}
-            <div className="md:sticky md:top-8">
-              <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 border-4 border-orange-500">
-                <div className="bg-orange-500 text-white text-center py-4 px-4 rounded-lg mb-6">
-                  <div className="font-bold text-base leading-snug">Complete the quick request form and our tech will reach out within 10 minutes</div>
+            <div className="bg-gray-50 p-6 border-l-4 border-black">
+              <p className="font-bold text-lg mb-2">SERVING:</p>
+              <p className="text-gray-700">Harris • Montgomery • Fort Bend • Waller • Brazoria • Liberty Counties</p>
+            </div>
+          </div>
+
+          {/* Right Side - Form */}
+          <div>
+            <div className="bg-black text-white p-8 sticky top-8">
+              <div className="bg-orange-600 text-white text-center py-4 px-4 mb-6 font-black text-xl transform -rotate-1">
+                GET A TECH IN 10 MINUTES
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    placeholder="John Smith"
+                  />
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    placeholder="(832) 555-1234"
+                  />
+                  <p className="text-xs text-gray-400 mt-1">We'll call this number in 10 min</p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    placeholder="john@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                    Street Address
+                  </label>
+                  <input
+                    type="text"
+                    name="address"
+                    required
+                    value={formData.address}
+                    onChange={handleChange}
+                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    placeholder="123 Main St"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Your Name *
+                    <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                      City
                     </label>
                     <input
                       type="text"
-                      name="name"
+                      name="city"
                       required
-                      value={formData.name}
+                      value={formData.city}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
-                      placeholder="John Smith"
+                      className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                      placeholder="Houston"
                     />
                   </div>
-
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
-                      placeholder="(832) 555-1234"
-                    />
-                    <p className="text-xs text-gray-500 mt-1">Contractor will call this number</p>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
-                      placeholder="john@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Street Address *
+                    <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                      ZIP
                     </label>
                     <input
                       type="text"
-                      name="address"
+                      name="zip"
                       required
-                      value={formData.address}
+                      value={formData.zip}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
-                      placeholder="123 Main St"
+                      className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                      placeholder="77001"
                     />
                   </div>
+                </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        City *
-                      </label>
-                      <input
-                        type="text"
-                        name="city"
-                        required
-                        value={formData.city}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
-                        placeholder="Houston"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        ZIP Code *
-                      </label>
-                      <input
-                        type="text"
-                        name="zip"
-                        required
-                        value={formData.zip}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
-                        placeholder="77001"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      County *
-                    </label>
-                    <select
-                      name="county"
-                      required
-                      value={formData.county}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg"
-                    >
-                      <option value="">Select County</option>
-                      <option value="Harris">Harris</option>
-                      <option value="Montgomery">Montgomery</option>
-                      <option value="Fort Bend">Fort Bend</option>
-                      <option value="Waller">Waller</option>
-                      <option value="Brazoria">Brazoria</option>
-                      <option value="Liberty">Liberty</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Property Type *
-                    </label>
-                    <div className="flex gap-4">
-                      <label className="flex items-center gap-2 cursor-pointer">
-                        <input
-                          type="radio"
-                          name="jobType"
-                          value="residential"
-                          checked={formData.jobType === 'residential'}
-                          onChange={handleChange}
-                          className="w-5 h-5 text-orange-500 border-gray-300 focus:ring-orange-500"
-                        />
-                        <span className="text-lg text-gray-700">Residential</span>
-                      </label>
-                      <label className="flex items-center gap-2 cursor-pointer">
-                        <input
-                          type="radio"
-                          name="jobType"
-                          value="commercial"
-                          checked={formData.jobType === 'commercial'}
-                          onChange={handleChange}
-                          className="w-5 h-5 text-orange-500 border-gray-300 focus:ring-orange-500"
-                        />
-                        <span className="text-lg text-gray-700">Commercial</span>
-                      </label>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      What's the problem? *
-                    </label>
-                    <textarea
-                      name="issue"
-                      required
-                      value={formData.issue}
-                      onChange={handleChange}
-                      rows={4}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none text-lg resize-none"
-                      placeholder="Example: Garage door won't open, making loud noise..."
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white py-4 px-6 rounded-lg font-bold text-xl hover:from-orange-600 hover:to-orange-700 transition shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                <div>
+                  <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                    County
+                  </label>
+                  <select
+                    name="county"
+                    required
+                    value={formData.county}
+                    onChange={handleChange}
+                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
                   >
-                    {submitting ? 'Sending...' : 'Get Free Quote Now'}
-                  </button>
+                    <option value="">Select County</option>
+                    <option value="Harris">Harris</option>
+                    <option value="Montgomery">Montgomery</option>
+                    <option value="Fort Bend">Fort Bend</option>
+                    <option value="Waller">Waller</option>
+                    <option value="Brazoria">Brazoria</option>
+                    <option value="Liberty">Liberty</option>
+                  </select>
+                </div>
 
-                  <p className="text-center text-xs text-gray-500">
-                    By submitting, you agree to be contacted by a contractor. No spam, ever.
-                  </p>
-                </form>
-              </div>
-
-              {/* Mobile Trust Badges */}
-              <div className="md:hidden bg-gray-100 rounded-xl p-6 mt-6">
-                <div className="text-sm font-semibold text-gray-600 mb-3 text-center">TRUSTED BY HOUSTON HOMEOWNERS</div>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">500+</div>
-                    <div className="text-xs text-gray-600">Jobs/Month</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">4.9★</div>
-                    <div className="text-xs text-gray-600">Rating</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">&lt;10min</div>
-                    <div className="text-xs text-gray-600">Response</div>
+                <div>
+                  <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                    Property Type
+                  </label>
+                  <div className="flex gap-4">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="jobType"
+                        value="residential"
+                        checked={formData.jobType === 'residential'}
+                        onChange={handleChange}
+                        className="w-5 h-5"
+                      />
+                      <span className="text-lg text-white font-bold">Residential</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="jobType"
+                        value="commercial"
+                        checked={formData.jobType === 'commercial'}
+                        onChange={handleChange}
+                        className="w-5 h-5"
+                      />
+                      <span className="text-lg text-white font-bold">Commercial</span>
+                    </label>
                   </div>
                 </div>
-              </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                    What's Wrong?
+                  </label>
+                  <textarea
+                    name="issue"
+                    required
+                    value={formData.issue}
+                    onChange={handleChange}
+                    rows={3}
+                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg resize-none focus:outline-none focus:border-orange-600"
+                    placeholder="Door won't open, loud noise, spring broke..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full bg-orange-600 text-white py-5 px-6 font-black text-2xl hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {submitting ? 'SENDING...' : 'GET MY FREE QUOTE'}
+                </button>
+
+                <p className="text-center text-xs text-gray-400">
+                  By submitting, you agree to be contacted. No spam.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats Bar */}
+      <div className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-3 gap-8 text-center">
+            <div className="border-r border-gray-700">
+              <div className="text-5xl font-black text-orange-600 mb-2">500+</div>
+              <div className="text-sm uppercase tracking-wide">Repairs This Month</div>
+            </div>
+            <div className="border-r border-gray-700">
+              <div className="text-5xl font-black text-orange-600 mb-2">&lt;10</div>
+              <div className="text-sm uppercase tracking-wide">Minute Callback</div>
+            </div>
+            <div>
+              <div className="text-5xl font-black text-orange-600 mb-2">24/7</div>
+              <div className="text-sm uppercase tracking-wide">Emergency Service</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-8 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <div className="text-2xl font-bold text-white mb-2">Texas Garage Fix</div>
-          <p className="mb-4">Fast, professional garage door repair across Houston</p>
-          <div className="mb-4">
-            <a href="/" className="text-gray-400 hover:text-white mx-3">Home</a>
-            <a href="/services" className="text-gray-400 hover:text-white mx-3">Services</a>
-            <a href="/about" className="text-gray-400 hover:text-white mx-3">About</a>
+      <footer className="bg-black text-white py-8">
+        <div className="container mx-auto px-4 text-center max-w-7xl">
+          <div className="text-3xl font-black mb-4">TEXAS GARAGE FIX</div>
+          <div className="mb-4 space-x-6">
+            <a href="/" className="hover:text-orange-600">HOME</a>
+            <a href="/services" className="hover:text-orange-600">SERVICES</a>
+            <a href="/about" className="hover:text-orange-600">ABOUT</a>
           </div>
-          <p className="text-sm">&copy; 2024 Texas Garage Fix. All rights reserved.</p>
+          <p className="text-sm text-gray-400">&copy; 2024 Texas Garage Fix</p>
         </div>
       </footer>
     </div>
