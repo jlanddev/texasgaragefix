@@ -104,8 +104,8 @@ export default function HomePage() {
             willChange: 'transform'
           }}
         />
-        {/* Smokey Grey Overlay */}
-        <div className="absolute inset-0 bg-smokey opacity-85"></div>
+        {/* Navy Overlay */}
+        <div className="absolute inset-0 bg-smokey opacity-80"></div>
 
         <div className="container mx-auto px-6 py-20 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -336,7 +336,7 @@ export default function HomePage() {
       {/* Footer */}
       <footer className="bg-smokey text-white py-8">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <div className="font-black text-xl">TEXAS GARAGE FIX</div>
+          <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
           <div className="flex gap-8 text-xs uppercase font-bold">
             <a href="/" className="hover:text-tn-orange transition">HOME</a>
             <a href="/services" className="hover:text-tn-orange transition">SERVICES</a>

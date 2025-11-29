@@ -11,7 +11,9 @@ export default function AboutPage() {
       {/* Navigation */}
       <nav className="border-b border-gray-200 py-4 px-4">
         <div className="container mx-auto flex items-center justify-between max-w-7xl">
-          <a href="/" className="text-3xl font-black text-gray-900">TEXAS GARAGE FIX</a>
+          <a href="/">
+            <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
+          </a>
           <div className="flex gap-8 text-sm font-bold uppercase tracking-wide">
             <a href="/" className="text-gray-900 hover:text-tn-orange">Home</a>
             <a href="/services" className="text-gray-900 hover:text-tn-orange">Services</a>
@@ -184,7 +186,9 @@ export default function AboutPage() {
       {/* Footer */}
       <footer className="bg-smokey text-white py-8">
         <div className="container mx-auto px-4 text-center max-w-7xl">
-          <div className="text-3xl font-black mb-4">TEXAS GARAGE FIX</div>
+          <div className="flex justify-center mb-4">
+            <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
+          </div>
           <div className="mb-4 space-x-6">
             <a href="/" className="hover:text-tn-orange">HOME</a>
             <a href="/services" className="hover:text-tn-orange">SERVICES</a>

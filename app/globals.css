@@ -3,40 +3,42 @@
 @tailwind utilities;
 
 :root {
-  --tn-orange: #FF8200;
-  --smokey-grey: #58595B;
+  --tn-orange: #F26522;
+  --smokey-grey: #03244D;
+  --auburn-navy: #03244D;
+  --auburn-orange: #F26522;
 }
 
 .bg-tn-orange {
-  background-color: var(--tn-orange);
+  background-color: var(--auburn-orange);
 }
 
 .text-tn-orange {
-  color: var(--tn-orange);
+  color: var(--auburn-orange);
 }
 
 .border-tn-orange {
-  border-color: var(--tn-orange);
+  border-color: var(--auburn-orange);
 }
 
 .bg-smokey {
-  background-color: var(--smokey-grey);
+  background-color: var(--auburn-navy);
 }
 
 .text-smokey {
-  color: var(--smokey-grey);
+  color: var(--auburn-navy);
 }
 
 .border-smokey {
-  border-color: var(--smokey-grey);
+  border-color: var(--auburn-navy);
 }
 
 .hover\:bg-tn-orange:hover {
-  background-color: var(--tn-orange);
+  background-color: var(--auburn-orange);
 }
 
 .hover\:text-tn-orange:hover {
-  color: var(--tn-orange);
+  color: var(--auburn-orange);
 }
 
 /* Animations */
