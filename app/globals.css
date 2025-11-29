@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --tn-orange: #FF8200;
+  --smokey-grey: #58595B;
+}
+
+.bg-tn-orange {
+  background-color: var(--tn-orange);
+}
+
+.text-tn-orange {
+  color: var(--tn-orange);
+}
+
+.border-tn-orange {
+  border-color: var(--tn-orange);
+}
+
+.bg-smokey {
+  background-color: var(--smokey-grey);
+}
+
+.text-smokey {
+  color: var(--smokey-grey);
+}
+
+.border-smokey {
+  border-color: var(--smokey-grey);
+}
+
+.hover\:bg-tn-orange:hover {
+  background-color: var(--tn-orange);
+}
+
+.hover\:text-tn-orange:hover {
+  color: var(--tn-orange);
+}

@@ -79,7 +79,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Simple Top Bar */}
-      <div className="bg-black text-white py-2 px-4 text-center text-sm font-bold">
+      <div className="bg-smokey text-white py-2 px-4 text-center text-sm font-bold">
         SAME DAY SERVICE • 24/7 EMERGENCY REPAIRS • ALL BRANDS
       </div>
 
@@ -88,9 +88,9 @@ export default function HomePage() {
         <div className="container mx-auto flex items-center justify-between max-w-7xl">
           <a href="/" className="text-3xl font-black text-gray-900">TEXAS GARAGE FIX</a>
           <div className="flex gap-8 text-sm font-bold uppercase tracking-wide">
-            <a href="/" className="text-gray-900 hover:text-orange-600">Home</a>
-            <a href="/services" className="text-gray-900 hover:text-orange-600">Services</a>
-            <a href="/about" className="text-gray-900 hover:text-orange-600">About</a>
+            <a href="/" className="text-gray-900 hover:text-tn-orange">Home</a>
+            <a href="/services" className="text-gray-900 hover:text-tn-orange">Services</a>
+            <a href="/about" className="text-gray-900 hover:text-tn-orange">About</a>
           </div>
         </div>
       </nav>
@@ -100,12 +100,12 @@ export default function HomePage() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side */}
           <div>
-            <div className="inline-block bg-orange-600 text-white px-6 py-2 font-black text-sm mb-6 transform -rotate-1">
+            <div className="inline-block bg-tn-orange text-white px-6 py-2 font-black text-sm mb-6 transform -rotate-1">
               HOUSTON'S FASTEST RESPONSE TIME
             </div>
 
             <div className="relative mb-6">
-              <div className="absolute -left-4 top-0 w-2 h-full bg-orange-600"></div>
+              <div className="absolute -left-4 top-0 w-2 h-full bg-tn-orange"></div>
               <h1 className="text-6xl lg:text-7xl font-black text-gray-900 leading-none">
                 BROKEN<br/>
                 GARAGE<br/>
@@ -113,14 +113,14 @@ export default function HomePage() {
               </h1>
             </div>
 
-            <div className="bg-orange-600 text-white p-8 mb-8 transform rotate-1">
+            <div className="bg-tn-orange text-white p-8 mb-8 transform rotate-1">
               <p className="text-3xl font-black mb-2">10 MINUTES</p>
               <p className="text-lg">That's how fast we call you back. Not kidding.</p>
             </div>
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-4 group">
-                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 bg-tn-orange flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" />
                   </svg>
@@ -131,7 +131,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
-                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 bg-tn-orange flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" />
                   </svg>
@@ -142,7 +142,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
-                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 bg-tn-orange flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" />
                   </svg>
@@ -153,7 +153,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="flex items-start gap-4 group">
-                <div className="w-8 h-8 bg-orange-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-8 h-8 bg-tn-orange flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 12l2 2 4-4" />
                   </svg>
@@ -165,7 +165,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-gray-50 p-6 border-l-4 border-black">
+            <div className="bg-gray-50 p-6 border-l-4 border-smokey">
               <p className="font-bold text-lg mb-2">SERVING:</p>
               <p className="text-gray-700">Harris • Montgomery • Fort Bend • Waller • Brazoria • Liberty Counties</p>
             </div>
@@ -173,8 +173,8 @@ export default function HomePage() {
 
           {/* Right Side - Form */}
           <div>
-            <div className="bg-black text-white p-8 sticky top-8">
-              <div className="bg-orange-600 text-white text-center py-4 px-4 mb-6 font-black text-xl transform -rotate-1">
+            <div className="bg-smokey text-white p-8 sticky top-8">
+              <div className="bg-tn-orange text-white text-center py-4 px-4 mb-6 font-black text-xl transform -rotate-1">
                 GET A TECH IN 10 MINUTES
               </div>
 
@@ -189,7 +189,7 @@ export default function HomePage() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    className="w-full px-4 py-4 border-2 border-white bg-smokey text-white text-lg focus:outline-none focus:border-tn-orange"
                     placeholder="John Smith"
                   />
                 </div>
@@ -204,7 +204,7 @@ export default function HomePage() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    className="w-full px-4 py-4 border-2 border-white bg-smokey text-white text-lg focus:outline-none focus:border-tn-orange"
                     placeholder="(832) 555-1234"
                   />
                   <p className="text-xs text-gray-400 mt-1">We'll call this number in 10 min</p>
@@ -220,7 +220,7 @@ export default function HomePage() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    className="w-full px-4 py-4 border-2 border-white bg-smokey text-white text-lg focus:outline-none focus:border-tn-orange"
                     placeholder="john@email.com"
                   />
                 </div>
@@ -235,7 +235,7 @@ export default function HomePage() {
                     required
                     value={formData.address}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    className="w-full px-4 py-4 border-2 border-white bg-smokey text-white text-lg focus:outline-none focus:border-tn-orange"
                     placeholder="123 Main St"
                   />
                 </div>
@@ -251,7 +251,7 @@ export default function HomePage() {
                       required
                       value={formData.city}
                       onChange={handleChange}
-                      className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                      className="w-full px-4 py-4 border-2 border-white bg-smokey text-white text-lg focus:outline-none focus:border-tn-orange"
                       placeholder="Houston"
                     />
                   </div>
@@ -265,7 +265,7 @@ export default function HomePage() {
                       required
                       value={formData.zip}
                       onChange={handleChange}
-                      className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                      className="w-full px-4 py-4 border-2 border-white bg-smokey text-white text-lg focus:outline-none focus:border-tn-orange"
                       placeholder="77001"
                     />
                   </div>
@@ -280,7 +280,7 @@ export default function HomePage() {
                     required
                     value={formData.county}
                     onChange={handleChange}
-                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg focus:outline-none focus:border-orange-600"
+                    className="w-full px-4 py-4 border-2 border-white bg-smokey text-white text-lg focus:outline-none focus:border-tn-orange"
                   >
                     <option value="">Select County</option>
                     <option value="Harris">Harris</option>
@@ -332,7 +332,7 @@ export default function HomePage() {
                     value={formData.issue}
                     onChange={handleChange}
                     rows={3}
-                    className="w-full px-4 py-4 border-2 border-white bg-black text-white text-lg resize-none focus:outline-none focus:border-orange-600"
+                    className="w-full px-4 py-4 border-2 border-white bg-smokey text-white text-lg resize-none focus:outline-none focus:border-tn-orange"
                     placeholder="Door won't open, loud noise, spring broke..."
                   />
                 </div>
@@ -340,7 +340,7 @@ export default function HomePage() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full bg-orange-600 text-white py-5 px-6 font-black text-2xl hover:bg-orange-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-tn-orange text-white py-5 px-6 font-black text-2xl hover:bg-tn-orange transition disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {submitting ? 'SENDING...' : 'GET MY FREE QUOTE'}
                 </button>
@@ -357,21 +357,21 @@ export default function HomePage() {
       {/* Stats Bar */}
       <div className="bg-gray-900 text-white py-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-orange-600 rounded-full -translate-x-32 -translate-y-32"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-600 rounded-full translate-x-48 translate-y-48"></div>
+          <div className="absolute top-0 left-0 w-64 h-64 bg-tn-orange rounded-full -translate-x-32 -translate-y-32"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-tn-orange rounded-full translate-x-48 translate-y-48"></div>
         </div>
         <div className="container mx-auto px-4 max-w-7xl relative">
           <div className="grid grid-cols-3 gap-8 text-center">
             <div className="border-r border-gray-700">
-              <div className="text-5xl font-black text-orange-600 mb-2">500+</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">500+</div>
               <div className="text-sm uppercase tracking-wide">Repairs This Month</div>
             </div>
             <div className="border-r border-gray-700">
-              <div className="text-5xl font-black text-orange-600 mb-2">&lt;10</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">&lt;10</div>
               <div className="text-sm uppercase tracking-wide">Minute Callback</div>
             </div>
             <div>
-              <div className="text-5xl font-black text-orange-600 mb-2">24/7</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">24/7</div>
               <div className="text-sm uppercase tracking-wide">Emergency Service</div>
             </div>
           </div>
@@ -379,13 +379,13 @@ export default function HomePage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-8">
+      <footer className="bg-smokey text-white py-8">
         <div className="container mx-auto px-4 text-center max-w-7xl">
           <div className="text-3xl font-black mb-4">TEXAS GARAGE FIX</div>
           <div className="mb-4 space-x-6">
-            <a href="/" className="hover:text-orange-600">HOME</a>
-            <a href="/services" className="hover:text-orange-600">SERVICES</a>
-            <a href="/about" className="hover:text-orange-600">ABOUT</a>
+            <a href="/" className="hover:text-tn-orange">HOME</a>
+            <a href="/services" className="hover:text-tn-orange">SERVICES</a>
+            <a href="/about" className="hover:text-tn-orange">ABOUT</a>
           </div>
           <p className="text-sm text-gray-400">&copy; 2024 Texas Garage Fix</p>
         </div>
