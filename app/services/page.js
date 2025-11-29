@@ -197,29 +197,67 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Image Section */}
+        {/* Photo Section */}
         <div className="mt-16 grid md:grid-cols-2 gap-8">
-          <div
-            className="h-64 md:h-96 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #FF8200 0%, #58595B 100%)' }}
-          >
+          <div className="relative h-64 md:h-96 overflow-hidden group">
+            <img
+              src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
+              alt="Garage Door Technician"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-tn-orange opacity-20"></div>
             <div className="absolute inset-0 flex items-center justify-center text-white">
-              <div className="text-center p-8">
-                <div className="text-6xl font-black mb-4">500+</div>
-                <div className="text-2xl font-bold">REPAIRS MONTHLY</div>
+              <div className="text-center p-8 relative z-10">
+                <div className="text-6xl font-black mb-4 drop-shadow-lg">500+</div>
+                <div className="text-2xl font-bold drop-shadow-lg">REPAIRS MONTHLY</div>
               </div>
             </div>
           </div>
-          <div
-            className="h-64 md:h-96 relative overflow-hidden"
-            style={{ background: 'linear-gradient(135deg, #58595B 0%, #FF8200 100%)' }}
-          >
+          <div className="relative h-64 md:h-96 overflow-hidden group">
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
+              alt="Emergency Service"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-smokey opacity-30"></div>
             <div className="absolute inset-0 flex items-center justify-center text-white">
-              <div className="text-center p-8">
-                <div className="text-6xl font-black mb-4">24/7</div>
-                <div className="text-2xl font-bold">EMERGENCY SERVICE</div>
+              <div className="text-center p-8 relative z-10">
+                <div className="text-6xl font-black mb-4 drop-shadow-lg">24/7</div>
+                <div className="text-2xl font-bold drop-shadow-lg">EMERGENCY SERVICE</div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Additional Photos */}
+        <div className="mt-8 grid md:grid-cols-4 gap-4">
+          <div className="relative h-48 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80"
+              alt="Garage Door"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div className="relative h-48 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80"
+              alt="Modern Garage"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div className="relative h-48 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&q=80"
+              alt="Commercial Door"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            />
+          </div>
+          <div className="relative h-48 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80"
+              alt="Garage Tools"
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            />
           </div>
         </div>
       </div>
