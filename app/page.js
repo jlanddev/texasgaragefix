@@ -111,12 +111,8 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Content */}
             <div className="text-white">
-              <div className="inline-block mb-8">
-                <div className="text-7xl md:text-8xl font-black tracking-tighter leading-none">
-                  TEXAS<br/>
-                  GARAGE<br/>
-                  FIX
-                </div>
+              <div className="mb-8">
+                <img src="/logo.png" alt="Texas Garage Fix" className="w-full max-w-md" />
               </div>
 
               <div className="space-y-8 mb-12">
