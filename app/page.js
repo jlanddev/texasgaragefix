@@ -97,7 +97,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: `url(/Users/jordanh/Downloads/cinematic-professional-photograph-of-a-p_cNerKfJYQweiRRaQU1F4xw_dOVs2Y8YR9q7Fws3xaMIZA.png)`,
+            backgroundImage: `url(/hero-bg.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             transform: `translateY(${scrollY * 0.5}px)`,
