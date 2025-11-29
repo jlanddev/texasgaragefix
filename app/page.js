@@ -162,10 +162,6 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="mt-12 pt-12 border-t border-gray-600">
-                <div className="text-sm font-bold text-tn-orange mb-2 uppercase tracking-widest">SERVING</div>
-                <div className="text-lg">Harris • Montgomery • Fort Bend • Waller • Brazoria • Liberty</div>
-              </div>
             </div>
 
             {/* Right Form - Sticky */}
