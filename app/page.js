@@ -162,6 +162,10 @@ export default function HomePage() {
                 </div>
               </div>
 
+              <div className="mt-12 pt-12 border-t border-gray-600">
+                <div className="text-sm font-bold text-tn-orange mb-2 uppercase tracking-widest">SERVING</div>
+                <div className="text-lg">Harris • Montgomery • Fort Bend • Waller • Brazoria • Liberty</div>
+              </div>
             </div>
 
             {/* Right Form - Sticky */}
@@ -300,26 +304,6 @@ export default function HomePage() {
                   </p>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Stats Section */}
-      <div className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12 text-center">
-            <div className="border-r border-gray-200 last:border-0">
-              <div className="text-7xl font-black text-tn-orange mb-3">500+</div>
-              <div className="text-xl font-bold text-smokey uppercase tracking-wider">Repairs Monthly</div>
-            </div>
-            <div className="border-r border-gray-200 last:border-0">
-              <div className="text-7xl font-black text-tn-orange mb-3">&lt;10</div>
-              <div className="text-xl font-bold text-smokey uppercase tracking-wider">Minute Callback</div>
-            </div>
-            <div>
-              <div className="text-7xl font-black text-tn-orange mb-3">24/7</div>
-              <div className="text-xl font-bold text-smokey uppercase tracking-wider">Emergency Service</div>
             </div>
           </div>
         </div>
