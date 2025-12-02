@@ -1,6 +1,45 @@
 'use client';
 
+import { useState } from 'react';
+
 export default function ServicesPage() {
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const faqs = [
+    {
+      question: "What Qualifies as an Emergency Garage Door Repair?",
+      answer: "Any issue that prevents your garage door from opening or closing safely can be considered an emergency, especially if it poses a security risk, safety hazard, or major inconvenience to your daily routine."
+    },
+    {
+      question: "How Quickly Can a Technician Arrive for an Emergency Repair?",
+      answer: "We respond fast. After you submit a request, expect a callback within 10 minutes and same-day service for most emergency repairs in the Houston metro area."
+    },
+    {
+      question: "Can I Attempt to Repair My Garage Door on My Own?",
+      answer: "We don't recommend it. Garage doors have high-tension springs and complex mechanisms that can cause serious injury if handled improperly. It's always best to leave emergency garage door repair to trained professionals."
+    },
+    {
+      question: "Will My Garage Door Warranty Cover Emergency Repairs?",
+      answer: "It depends on your door's manufacturer and warranty terms. Our team can help assess your coverage and provide a clear breakdown of the emergency garage door repair cost before starting any work."
+    },
+    {
+      question: "Do Emergency Repair Services Include Fixing Garage Door Openers?",
+      answer: "Yes! Our emergency services cover everything from broken springs and cables to malfunctioning garage door openers and remotes. Whatever's wrong, we'll fix it fast and right."
+    },
+    {
+      question: "How Can I Maintain My Garage Door to Prevent Emergencies?",
+      answer: "Schedule regular maintenance! We recommend professional tune-ups once or twice a year to lubricate parts, check alignment, tighten hardware, and prevent problems before they start."
+    },
+    {
+      question: "What Should I Do If My Garage Door Is Stuck Open or Closed?",
+      answer: "First, ensure the opener is plugged in and check the batteries in your remote. If the problem persists, don't try to force it – this can cause more damage. Call us right away, and we'll get your door working again safely."
+    },
+    {
+      question: "How Do I Find the Best Emergency Garage Door Repair Near Me?",
+      answer: "When you search online for same-day fast repair or emergency garage door replacement services, there's no shortage of options, but you need an expert team you can trust. Texas Garage Fix provides honest, fairly priced services that put customer satisfaction first."
+    }
+  ];
+
   const services = [
     {
       title: "Spring Replacement",
@@ -199,67 +238,76 @@ export default function ServicesPage() {
           </div>
         </div>
 
-        {/* Photo Section */}
-        <div className="mt-16 grid md:grid-cols-2 gap-8">
-          <div className="relative h-64 md:h-96 overflow-hidden group">
-            <img
-              src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&q=80"
-              alt="Garage Door Technician"
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-tn-orange opacity-20"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-white">
-              <div className="text-center p-8 relative z-10">
-                <div className="text-6xl font-black mb-4 drop-shadow-lg">500+</div>
-                <div className="text-2xl font-bold drop-shadow-lg">REPAIRS MONTHLY</div>
-              </div>
-            </div>
-          </div>
-          <div className="relative h-64 md:h-96 overflow-hidden group">
-            <img
-              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80"
-              alt="Emergency Service"
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-smokey opacity-30"></div>
-            <div className="absolute inset-0 flex items-center justify-center text-white">
-              <div className="text-center p-8 relative z-10">
-                <div className="text-6xl font-black mb-4 drop-shadow-lg">24/7</div>
-                <div className="text-2xl font-bold drop-shadow-lg">EMERGENCY SERVICE</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
 
-        {/* Additional Photos */}
-        <div className="mt-8 grid md:grid-cols-4 gap-4">
-          <div className="relative h-48 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80"
-              alt="Garage Door"
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-            />
+      {/* FAQ Section */}
+      <div className="bg-gray-50 py-20">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-smokey text-white px-6 py-2 font-black text-sm mb-6 transform rotate-1">
+              24/7 EMERGENCY SERVICE
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-black text-smokey mb-4">
+              GARAGE DOOR FAQs
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Need answers about emergency garage door services? We've got you covered.
+            </p>
           </div>
-          <div className="relative h-48 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80"
-              alt="Modern Garage"
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-            />
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className={`border-4 transition-all ${
+                  openFaq === index
+                    ? 'border-tn-orange bg-white'
+                    : 'border-smokey bg-white hover:border-tn-orange'
+                }`}
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full px-8 py-6 flex items-center justify-between text-left"
+                >
+                  <span className="text-xl font-black text-smokey pr-4">{faq.question}</span>
+                  <div
+                    className={`w-10 h-10 flex-shrink-0 flex items-center justify-center transition-all ${
+                      openFaq === index ? 'bg-tn-orange' : 'bg-smokey'
+                    }`}
+                  >
+                    <svg
+                      className={`w-6 h-6 text-white transition-transform ${
+                        openFaq === index ? 'rotate-45' : ''
+                      }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </div>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openFaq === index ? 'max-h-96' : 'max-h-0'
+                  }`}
+                >
+                  <div className="px-8 pb-8 border-t-2 border-gray-100 pt-6">
+                    <p className="text-lg text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="relative h-48 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&q=80"
-              alt="Commercial Door"
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-            />
-          </div>
-          <div className="relative h-48 overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80"
-              alt="Garage Tools"
-              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-            />
+
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-600 mb-6">Still have questions?</p>
+            <a
+              href="/"
+              className="inline-block bg-tn-orange text-white px-10 py-4 font-black text-lg hover:bg-opacity-90 transition"
+            >
+              CONTACT US NOW
+            </a>
           </div>
         </div>
       </div>
