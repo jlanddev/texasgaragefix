@@ -102,13 +102,13 @@ export default function HomePage() {
           style={{
             backgroundImage: `url(/hero-bg.png)`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            transform: `translateY(${scrollY * 0.5}px)`,
+            backgroundPosition: 'left center',
+            transform: `translateY(${scrollY * 0.3}px)`,
             willChange: 'transform'
           }}
         />
-        {/* Navy Overlay */}
-        <div className="absolute inset-0 bg-smokey opacity-80"></div>
+        {/* Navy Overlay - lighter to show image better */}
+        <div className="absolute inset-0 bg-smokey opacity-60"></div>
 
         <div className="container mx-auto px-6 py-20 max-w-7xl relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
