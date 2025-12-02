@@ -68,10 +68,10 @@ export default function HomePage() {
         <div className="max-w-2xl w-full text-center">
           <div className="text-8xl mb-8">✓</div>
           <h1 className="text-5xl font-black text-gray-900 mb-4">WE GOT IT</h1>
-          <p className="text-2xl text-gray-700 mb-8">Expect a call in the next 10 minutes</p>
+          <p className="text-2xl text-gray-700 mb-8">A local garage door pro will call you within 10 minutes</p>
           <div className="bg-gray-50 p-8">
             <p className="text-xl font-bold text-gray-900">
-              Keep your phone handy - our tech is calling you now
+              Keep your phone handy - you'll be connected with a technician shortly
             </p>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function HomePage() {
           style={{
             backgroundImage: `url(/hero-bg.png)`,
             backgroundSize: 'cover',
-            backgroundPosition: 'left center',
+            backgroundPosition: 'right center',
             transform: `translateY(${scrollY * 0.3}px)`,
             willChange: 'transform'
           }}
@@ -119,11 +119,23 @@ export default function HomePage() {
                   BROKEN GARAGE DOOR?
                 </div>
                 <div className="text-2xl leading-relaxed">
-                  We'll call you back in <span className="text-tn-orange font-black">10 minutes</span> and fix it <span className="text-tn-orange font-black">same day</span>
+                  We connect you with a <span className="text-tn-orange font-black">local tech</span> in <span className="text-tn-orange font-black">10 minutes</span>
                 </div>
               </div>
 
               <div className="space-y-5">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-tn-orange flex items-center justify-center flex-shrink-0">
+                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-xl font-bold">Local Pros</div>
+                    <div className="text-gray-300">Vetted technicians in your area</div>
+                  </div>
+                </div>
+
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-tn-orange flex items-center justify-center flex-shrink-0">
                     <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,20 +155,8 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-xl font-bold">All Brands</div>
-                    <div className="text-gray-300">Springs, openers, panels, tracks</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-tn-orange flex items-center justify-center flex-shrink-0">
-                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="text-xl font-bold">Upfront Pricing</div>
-                    <div className="text-gray-300">No hidden fees or surprises</div>
+                    <div className="text-xl font-bold">Free Quotes</div>
+                    <div className="text-gray-300">No obligation estimates</div>
                   </div>
                 </div>
               </div>
@@ -173,7 +173,7 @@ export default function HomePage() {
                 <div className="text-center mb-8">
                   <div className="text-tn-orange font-black text-sm mb-3 uppercase tracking-widest">FAST RESPONSE</div>
                   <h2 className="text-4xl font-black text-smokey leading-tight">
-                    GET A TECH IN<br/>10 MINUTES
+                    GET CONNECTED<br/>IN 10 MINUTES
                   </h2>
                 </div>
 
