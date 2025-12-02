@@ -81,13 +81,16 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Thin Top Bar */}
-      <div className="bg-smokey text-white px-6 py-2 flex items-center justify-between text-xs uppercase tracking-wider">
-        <div className="font-bold">24/7 EMERGENCY SERVICE</div>
-        <div className="flex gap-6 font-bold">
-          <a href="/" className="hover:text-tn-orange transition">HOME</a>
-          <a href="/services" className="hover:text-tn-orange transition">SERVICES</a>
-          <a href="/about" className="hover:text-tn-orange transition">ABOUT</a>
+      {/* Header */}
+      <div className="bg-cream px-6 py-3 flex items-center justify-between">
+        <img src="/logo.png" alt="Texas Garage Fix" className="h-14" />
+        <div className="flex items-center gap-8">
+          <div className="text-smokey font-bold text-sm uppercase tracking-wider hidden sm:block">24/7 EMERGENCY SERVICE</div>
+          <div className="flex gap-6 text-sm font-bold uppercase tracking-wide">
+            <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
+            <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
+            <a href="/about" className="text-smokey hover:text-tn-orange transition">ABOUT</a>
+          </div>
         </div>
       </div>
 
@@ -111,10 +114,6 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Content */}
             <div className="text-white">
-              <div className="mb-8">
-                <img src="/logo.png" alt="Texas Garage Fix" className="w-full max-w-md" />
-              </div>
-
               <div className="space-y-8 mb-12">
                 <div className="text-3xl font-black text-tn-orange">
                   BROKEN GARAGE DOOR?
@@ -310,13 +309,13 @@ export default function HomePage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-smokey text-white py-8">
+      <footer className="bg-cream py-8">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
-          <div className="flex gap-8 text-xs uppercase font-bold">
-            <a href="/" className="hover:text-tn-orange transition">HOME</a>
-            <a href="/services" className="hover:text-tn-orange transition">SERVICES</a>
-            <a href="/about" className="hover:text-tn-orange transition">ABOUT</a>
+          <div className="flex gap-8 text-sm uppercase font-bold">
+            <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
+            <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
+            <a href="/about" className="text-smokey hover:text-tn-orange transition">ABOUT</a>
           </div>
         </div>
       </footer>

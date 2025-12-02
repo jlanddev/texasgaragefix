@@ -7,6 +7,7 @@
   --smokey-grey: #03244D;
   --auburn-navy: #03244D;
   --auburn-orange: #F26522;
+  --logo-cream: #F5F0E6;
 }
 
 .bg-tn-orange {
@@ -31,6 +32,10 @@
 
 .border-smokey {
   border-color: var(--auburn-navy);
+}
+
+.bg-cream {
+  background-color: var(--logo-cream);
 }
 
 .hover\:bg-tn-orange:hover {

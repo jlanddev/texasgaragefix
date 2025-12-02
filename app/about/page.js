@@ -3,24 +3,20 @@
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Top Bar */}
-      <div className="bg-smokey text-white py-2 px-4 text-center text-sm font-bold">
-        SAME DAY SERVICE • 24/7 EMERGENCY REPAIRS • ALL BRANDS
-      </div>
-
-      {/* Navigation */}
-      <nav className="border-b border-gray-200 py-4 px-4">
-        <div className="container mx-auto flex items-center justify-between max-w-7xl">
-          <a href="/">
-            <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
-          </a>
-          <div className="flex gap-8 text-sm font-bold uppercase tracking-wide">
-            <a href="/" className="text-gray-900 hover:text-tn-orange">Home</a>
-            <a href="/services" className="text-gray-900 hover:text-tn-orange">Services</a>
-            <a href="/about" className="text-gray-900 hover:text-tn-orange">About</a>
+      {/* Header */}
+      <div className="bg-cream px-6 py-3 flex items-center justify-between">
+        <a href="/">
+          <img src="/logo.png" alt="Texas Garage Fix" className="h-14" />
+        </a>
+        <div className="flex items-center gap-8">
+          <div className="text-smokey font-bold text-sm uppercase tracking-wider hidden sm:block">24/7 EMERGENCY SERVICE</div>
+          <div className="flex gap-6 text-sm font-bold uppercase tracking-wide">
+            <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
+            <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
+            <a href="/about" className="text-smokey hover:text-tn-orange transition">ABOUT</a>
           </div>
         </div>
-      </nav>
+      </div>
 
       {/* Hero */}
       <div className="bg-smokey text-white py-20 px-4">
@@ -184,17 +180,17 @@ export default function AboutPage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-smokey text-white py-8">
-        <div className="container mx-auto px-4 text-center max-w-7xl">
-          <div className="flex justify-center mb-4">
+      <footer className="bg-cream py-8">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="flex justify-between items-center">
             <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
+            <div className="flex gap-8 text-sm uppercase font-bold">
+              <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
+              <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
+              <a href="/about" className="text-smokey hover:text-tn-orange transition">ABOUT</a>
+            </div>
           </div>
-          <div className="mb-4 space-x-6">
-            <a href="/" className="hover:text-tn-orange">HOME</a>
-            <a href="/services" className="hover:text-tn-orange">SERVICES</a>
-            <a href="/about" className="hover:text-tn-orange">ABOUT</a>
-          </div>
-          <p className="text-sm text-gray-400">&copy; 2024 Texas Garage Fix</p>
+          <p className="text-sm text-gray-500 mt-4 text-center">&copy; 2024 Texas Garage Fix</p>
         </div>
       </footer>
     </div>
