@@ -45,22 +45,32 @@ export async function POST(request) {
     // Step 2: Find matching campaigns (new campaign-based routing)
     const { data: allCampaigns, error: campaignsError } = await supabase
       .from('campaigns')
-      .select('*, contractors(*)')
+      .select('*')
       .eq('status', 'active');
 
     if (campaignsError) {
       console.error('Campaign query error:', campaignsError);
-      return NextResponse.json({ error: 'Failed to find campaigns' }, { status: 500 });
     }
 
-    // Filter campaigns that match county and job type
-    const matchingCampaigns = allCampaigns.filter(campaign => {
+    // Get all active contractors for lookup
+    const { data: allActiveContractors } = await supabase
+      .from('contractors')
+      .select('*')
+      .eq('status', 'active');
+
+    const contractorMap = {};
+    allActiveContractors?.forEach(c => contractorMap[c.id] = c);
+
+    // Filter campaigns that match county, job type, and have active contractor
+    const matchingCampaigns = (allCampaigns || []).filter(campaign => {
       const matchesCounty = campaign.counties?.includes(leadData.county);
       const matchesJobType = campaign.job_types?.includes(leadData.jobType);
-      return matchesCounty && matchesJobType && campaign.contractors?.status === 'active';
-    });
+      const hasActiveContractor = contractorMap[campaign.contractor_id];
+      return matchesCounty && matchesJobType && hasActiveContractor;
+    }).map(c => ({ ...c, contractor: contractorMap[c.contractor_id] }));
 
     console.log('Lead:', { county: leadData.county, jobType: leadData.jobType });
+    console.log('All campaigns:', allCampaigns?.length || 0);
     console.log('Matching campaigns:', matchingCampaigns.length);
 
     // Fallback to contractor-based routing if no campaigns exist
@@ -115,8 +125,8 @@ export async function POST(request) {
 
       if (campaignsWithCounts.length > 0) {
         assignedCampaign = campaignsWithCounts[0];
-        assignedContractor = assignedCampaign.contractors;
-        console.log(`📋 Campaign routing: ${assignedCampaign.name} -> ${assignedContractor.email}`);
+        assignedContractor = assignedCampaign.contractor;
+        console.log(`📋 Campaign routing: ${assignedCampaign.name} -> ${assignedContractor?.email}`);
       }
     }
 
