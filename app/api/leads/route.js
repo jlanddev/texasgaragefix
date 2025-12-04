@@ -42,36 +42,43 @@ export async function POST(request) {
       );
     }
 
-    // Step 2: Find matching contractors
-    // Get all active contractors and filter in JavaScript
-    const { data: allContractors, error: contractorsError } = await supabase
-      .from('contractors')
-      .select('*')
+    // Step 2: Find matching campaigns (new campaign-based routing)
+    const { data: allCampaigns, error: campaignsError } = await supabase
+      .from('campaigns')
+      .select('*, contractors(*)')
       .eq('status', 'active');
 
-    if (contractorsError) {
-      console.error('Contractor query error:', contractorsError);
-      return NextResponse.json(
-        { error: 'Failed to find contractors' },
-        { status: 500 }
-      );
+    if (campaignsError) {
+      console.error('Campaign query error:', campaignsError);
+      return NextResponse.json({ error: 'Failed to find campaigns' }, { status: 500 });
     }
 
-    // Filter contractors who match county and job type
-    const contractors = allContractors.filter(contractor => {
-      const matchesCounty = contractor.counties.includes(leadData.county);
-      const matchesJobType = contractor.job_types.includes(leadData.jobType);
-      return matchesCounty && matchesJobType;
+    // Filter campaigns that match county and job type
+    const matchingCampaigns = allCampaigns.filter(campaign => {
+      const matchesCounty = campaign.counties?.includes(leadData.county);
+      const matchesJobType = campaign.job_types?.includes(leadData.jobType);
+      return matchesCounty && matchesJobType && campaign.contractors?.status === 'active';
     });
 
-    console.log('Lead data:', { county: leadData.county, jobType: leadData.jobType });
-    console.log('All contractors:', allContractors);
-    console.log('Matching contractors:', contractors);
+    console.log('Lead:', { county: leadData.county, jobType: leadData.jobType });
+    console.log('Matching campaigns:', matchingCampaigns.length);
 
-    if (!contractors || contractors.length === 0) {
-      // No contractors available - this should rarely happen, but log it
-      console.error('❌ NO MATCHING CONTRACTORS FOUND');
-      console.error('County:', leadData.county, 'Job Type:', leadData.jobType);
+    // Fallback to contractor-based routing if no campaigns exist
+    let contractors = [];
+    if (matchingCampaigns.length === 0) {
+      console.log('No campaigns found, falling back to contractor routing');
+      const { data: allContractors } = await supabase
+        .from('contractors')
+        .select('*')
+        .eq('status', 'active');
+
+      contractors = allContractors?.filter(c => {
+        return c.counties?.includes(leadData.county) && c.job_types?.includes(leadData.jobType);
+      }) || [];
+    }
+
+    if (matchingCampaigns.length === 0 && contractors.length === 0) {
+      console.error('❌ NO MATCHING CAMPAIGNS OR CONTRACTORS');
       return NextResponse.json({
         success: false,
         error: 'No contractors service this area yet'
@@ -80,38 +87,70 @@ export async function POST(request) {
 
     // Step 3: Round-robin assignment with daily cap checking
     const today = new Date().toISOString().split('T')[0];
+    let assignedContractor = null;
+    let assignedCampaign = null;
 
-    // Get daily counts for all contractors
-    const { data: allCounts } = await supabase
-      .from('daily_lead_counts')
-      .select('contractor_id, lead_count')
-      .eq('date', today);
+    // Campaign-based routing (priority)
+    if (matchingCampaigns.length > 0) {
+      // Get today's lead counts per campaign
+      const { data: todayLeads } = await supabase
+        .from('leads')
+        .select('campaign_id')
+        .gte('submitted_at', `${today}T00:00:00`)
+        .lte('submitted_at', `${today}T23:59:59`);
 
-    const countsMap = {};
-    allCounts?.forEach(c => countsMap[c.contractor_id] = c.lead_count);
+      const campaignCounts = {};
+      todayLeads?.forEach(l => {
+        if (l.campaign_id) campaignCounts[l.campaign_id] = (campaignCounts[l.campaign_id] || 0) + 1;
+      });
 
-    // Add lead counts to contractors and filter by capacity
-    const contractorsWithCounts = contractors.map(c => ({
-      ...c,
-      leads_today: countsMap[c.id] || 0
-    })).filter(c => c.leads_today < c.daily_lead_cap);
+      // Filter campaigns with capacity and add counts
+      const campaignsWithCounts = matchingCampaigns.map(c => ({
+        ...c,
+        leads_today: campaignCounts[c.id] || 0
+      })).filter(c => c.leads_today < c.daily_cap);
 
-    // Sort by leads_today ASC (true round-robin - least leads first)
-    contractorsWithCounts.sort((a, b) => a.leads_today - b.leads_today);
+      // Sort by leads_today ASC (round-robin)
+      campaignsWithCounts.sort((a, b) => a.leads_today - b.leads_today);
 
-    let assignedContractor = contractorsWithCounts[0] || null;
-
-    // If all at cap, assign to first contractor anyway (overflow)
-    if (!assignedContractor) {
-      assignedContractor = contractors[0];
-      console.log('⚠️ All contractors at cap - assigning to first contractor (overflow)');
+      if (campaignsWithCounts.length > 0) {
+        assignedCampaign = campaignsWithCounts[0];
+        assignedContractor = assignedCampaign.contractors;
+        console.log(`📋 Campaign routing: ${assignedCampaign.name} -> ${assignedContractor.email}`);
+      }
     }
 
-    // Step 4: Assign lead to contractor
+    // Fallback to contractor-based routing
+    if (!assignedContractor && contractors.length > 0) {
+      const { data: allCounts } = await supabase
+        .from('daily_lead_counts')
+        .select('contractor_id, lead_count')
+        .eq('date', today);
+
+      const countsMap = {};
+      allCounts?.forEach(c => countsMap[c.contractor_id] = c.lead_count);
+
+      const contractorsWithCounts = contractors.map(c => ({
+        ...c,
+        leads_today: countsMap[c.id] || 0
+      })).filter(c => c.leads_today < c.daily_lead_cap);
+
+      contractorsWithCounts.sort((a, b) => a.leads_today - b.leads_today);
+      assignedContractor = contractorsWithCounts[0] || contractors[0];
+      console.log(`👷 Contractor routing: ${assignedContractor.email}`);
+    }
+
+    if (!assignedContractor) {
+      console.error('❌ No contractor could be assigned');
+      return NextResponse.json({ success: false, error: 'No contractors available' }, { status: 400 });
+    }
+
+    // Step 4: Assign lead to contractor (and campaign if applicable)
     const { error: assignError } = await supabase
       .from('leads')
-      .update({ 
+      .update({
         contractor_id: assignedContractor.id,
+        campaign_id: assignedCampaign?.id || null,
         status: 'assigned',
         assigned_at: new Date().toISOString()
       })
