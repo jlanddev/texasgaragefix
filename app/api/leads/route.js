@@ -151,9 +151,24 @@ export async function POST(request) {
       console.log(`👷 Contractor routing: ${assignedContractor.email}`);
     }
 
+    // If no contractor assigned (all at capacity), mark for manual assignment
     if (!assignedContractor) {
-      console.error('❌ No contractor could be assigned');
-      return NextResponse.json({ success: false, error: 'No contractors available' }, { status: 400 });
+      console.log('⚠️ All contractors at capacity - marking for manual assignment');
+
+      await supabase
+        .from('leads')
+        .update({
+          status: 'unassigned',
+          notes: 'All campaigns at capacity - needs manual assignment'
+        })
+        .eq('id', lead.id);
+
+      return NextResponse.json({
+        success: true,
+        leadId: lead.id,
+        status: 'unassigned',
+        message: 'Lead saved - all contractors at capacity, pending manual assignment'
+      });
     }
 
     // Step 4: Assign lead to contractor (and campaign if applicable)
