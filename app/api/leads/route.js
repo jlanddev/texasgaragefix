@@ -81,24 +81,25 @@ export async function POST(request) {
     // Step 3: Round-robin assignment with daily cap checking
     const today = new Date().toISOString().split('T')[0];
 
-    let assignedContractor = null;
+    // Get daily counts for all contractors
+    const { data: allCounts } = await supabase
+      .from('daily_lead_counts')
+      .select('contractor_id, lead_count')
+      .eq('date', today);
 
-    // First pass: Find contractor with capacity
-    for (const contractor of contractors) {
-      const { data: dailyCount } = await supabase
-        .from('daily_lead_counts')
-        .select('lead_count')
-        .eq('contractor_id', contractor.id)
-        .eq('date', today)
-        .single();
+    const countsMap = {};
+    allCounts?.forEach(c => countsMap[c.contractor_id] = c.lead_count);
 
-      const currentCount = dailyCount?.lead_count || 0;
+    // Add lead counts to contractors and filter by capacity
+    const contractorsWithCounts = contractors.map(c => ({
+      ...c,
+      leads_today: countsMap[c.id] || 0
+    })).filter(c => c.leads_today < c.daily_lead_cap);
 
-      if (currentCount < contractor.daily_lead_cap) {
-        assignedContractor = contractor;
-        break;
-      }
-    }
+    // Sort by leads_today ASC (true round-robin - least leads first)
+    contractorsWithCounts.sort((a, b) => a.leads_today - b.leads_today);
+
+    let assignedContractor = contractorsWithCounts[0] || null;
 
     // If all at cap, assign to first contractor anyway (overflow)
     if (!assignedContractor) {
