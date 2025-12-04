@@ -2,9 +2,10 @@ import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 import twilio from 'twilio';
 
+// Use service role key for full database access (bypass RLS)
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
 const twilioClient = twilio(
