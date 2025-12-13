@@ -173,7 +173,7 @@ export default function ServicesPage() {
             WHAT WE FIX
           </h1>
           <p className="text-2xl max-w-3xl">
-            Every type of garage door problem. Fast. No excuses.
+            Every type of garage door problem. We've got you covered.
           </p>
         </div>
       </div>

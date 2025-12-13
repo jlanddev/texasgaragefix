@@ -29,7 +29,7 @@ export default function AboutPage() {
             WE ARE
           </h1>
           <p className="text-2xl max-w-3xl">
-            Professional garage door repair and installation across Houston. Fast response. Fair prices.
+            Professional garage door repair and installation across Houston. Available when you need us. Fair prices.
           </p>
         </div>
       </div>
@@ -44,7 +44,7 @@ export default function AboutPage() {
               We started Texas Garage Fix because we saw a problem: homeowners getting ripped off by overpriced, slow garage door companies. We knew there was a better way.
             </p>
             <p>
-              Now we're Houston's fastest-responding garage door service. Our techs are trained on all makes and models. We stock parts on every truck. We show up when we say we will.
+              Now we connect Houston homeowners with trusted local garage door pros. Our techs are trained on all makes and models. We stock parts on every truck. We show up when we say we will.
             </p>
             <p>
               No games. No upselling. Just honest work at fair prices.
@@ -114,7 +114,7 @@ export default function AboutPage() {
               </svg>
               <h3 className="text-2xl font-black mb-4">REPAIRS</h3>
               <p className="text-lg">
-                Springs, cables, panels, tracks, rollers - we fix it all. Same day.
+                Springs, cables, panels, tracks, rollers - we fix it all. Same-day available.
               </p>
             </div>
             <div className="bg-smokey text-white p-8 relative overflow-hidden group">
