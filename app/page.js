@@ -66,9 +66,13 @@ export default function HomePage() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center px-4">
         <div className="max-w-2xl w-full text-center">
-          <div className="text-8xl mb-8">✓</div>
-          <h1 className="text-5xl font-black text-gray-900 mb-4">WE GOT IT</h1>
-          <p className="text-2xl text-gray-700 mb-8">A local garage door pro will be in touch shortly</p>
+          <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-8">
+            <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h1 className="text-5xl font-black text-gray-900 mb-4">Request Received</h1>
+          <p className="text-2xl text-gray-700 mb-8">A local contractor will contact you shortly</p>
           <div className="bg-gray-50 p-8">
             <p className="text-xl font-bold text-gray-900">
               Keep your phone handy - a contractor will reach out soon
@@ -114,12 +118,12 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Content */}
             <div className="text-white">
-              <div className="space-y-8 mb-12">
-                <div className="text-3xl font-black text-tn-orange">
-                  BROKEN GARAGE DOOR?
-                </div>
-                <div className="text-2xl leading-relaxed">
-                  Get connected with a <span className="text-tn-orange font-black">local tech</span> <span className="text-tn-orange font-black">fast</span>
+              <div className="space-y-6 mb-12">
+                <h1 className="text-5xl font-black leading-tight">
+                  Houston Garage Door<br/>Repair Services
+                </h1>
+                <div className="text-xl leading-relaxed text-gray-200">
+                  Connect with licensed local contractors for repairs, installations, and emergency service across the Houston metro area.
                 </div>
               </div>
 
@@ -169,23 +173,14 @@ export default function HomePage() {
 
             {/* Right Form - Sticky */}
             <div className="lg:sticky lg:top-8">
-              {/* Urgency Banner */}
-              <div className="bg-smokey text-white p-4 mb-0 flex justify-around text-sm font-bold">
-                <span>⚡ Contractors standing by</span>
-                <span>🔧 Available now</span>
-                <span>✓ Trusted pros</span>
-              </div>
               <div className="bg-white p-10 shadow-2xl">
                 <div className="text-center mb-8">
-                  <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold mb-3 inline-block">
-                    🟢 12 Contractors in your area
-                  </div>
-                  <div className="text-tn-orange font-black text-sm mb-3 uppercase tracking-widest">EMERGENCY SERVICE AVAILABLE</div>
+                  <div className="text-tn-orange font-black text-sm mb-3 uppercase tracking-widest">Same-Day Service Available</div>
                   <h2 className="text-4xl font-black text-smokey leading-tight">
-                    REQUEST SERVICE<br/>GET A FREE QUOTE
+                    Get a Free Quote
                   </h2>
                   <p className="text-gray-600 text-sm mt-3">
-                    Join 1,000+ Houston homeowners who found help today
+                    Describe your issue and a local pro will reach out
                   </p>
                 </div>
 
