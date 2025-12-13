@@ -97,19 +97,23 @@ export default function TermsOfUse() {
 
       {/* Footer */}
       <footer className="bg-cream py-8">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
-          <div className="flex gap-8 text-sm uppercase font-bold">
-            <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
-            <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
-            <a href="/about" className="text-smokey hover:text-tn-orange transition">ABOUT</a>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-6">
+            <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
+            <div className="flex gap-8 text-sm uppercase font-bold">
+              <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
+              <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
+              <a href="/about" className="text-smokey hover:text-tn-orange transition">ABOUT</a>
+            </div>
+            <div className="flex gap-6 text-sm">
+              <a href="/terms-of-use" className="text-smokey hover:text-tn-orange transition">Terms of Use</a>
+              <a href="/privacy-policy" className="text-smokey hover:text-tn-orange transition">Privacy Policy</a>
+            </div>
           </div>
-          <div className="flex gap-6 text-sm">
-            <a href="/terms-of-use" className="text-smokey hover:text-tn-orange transition">Terms of Use</a>
-            <a href="/privacy-policy" className="text-smokey hover:text-tn-orange transition">Privacy Policy</a>
+          <div className="border-t border-gray-300 pt-4">
+            <p className="text-sm text-gray-500 text-center">&copy; 2025 Texas Garage Fix. All rights reserved.</p>
           </div>
         </div>
-        <p className="text-sm text-gray-500 mt-4 text-center">&copy; 2025 Texas Garage Fix</p>
       </footer>
     </div>
   );

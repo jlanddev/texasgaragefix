@@ -334,8 +334,8 @@ export default function ServicesPage() {
 
       {/* Footer */}
       <footer className="bg-cream py-8">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-6">
             <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
             <div className="flex gap-8 text-sm uppercase font-bold">
               <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
@@ -347,7 +347,9 @@ export default function ServicesPage() {
               <a href="/privacy-policy" className="text-smokey hover:text-tn-orange transition">Privacy Policy</a>
             </div>
           </div>
-          <p className="text-sm text-gray-500 mt-4 text-center">&copy; 2025 Texas Garage Fix</p>
+          <div className="border-t border-gray-300 pt-4">
+            <p className="text-sm text-gray-500 text-center">&copy; 2025 Texas Garage Fix. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
