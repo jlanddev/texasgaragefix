@@ -169,8 +169,17 @@ export default function HomePage() {
 
             {/* Right Form - Sticky */}
             <div className="lg:sticky lg:top-8">
+              {/* Urgency Banner */}
+              <div className="bg-smokey text-white p-4 mb-0 flex justify-around text-sm font-bold">
+                <span>⚡ Contractors standing by</span>
+                <span>🔧 Available now</span>
+                <span>✓ Trusted pros</span>
+              </div>
               <div className="bg-white p-10 shadow-2xl">
                 <div className="text-center mb-8">
+                  <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold mb-3 inline-block">
+                    🟢 12 Contractors in your area
+                  </div>
                   <div className="text-tn-orange font-black text-sm mb-3 uppercase tracking-widest">EMERGENCY SERVICE AVAILABLE</div>
                   <h2 className="text-4xl font-black text-smokey leading-tight">
                     REQUEST SERVICE<br/>GET A FREE QUOTE
@@ -322,6 +331,7 @@ export default function HomePage() {
             <a href="/privacy-policy" className="text-smokey hover:text-tn-orange transition">Privacy Policy</a>
           </div>
         </div>
+        <p className="text-sm text-gray-500 mt-4 text-center">&copy; 2025 Texas Garage Fix</p>
       </footer>
     </div>
   );

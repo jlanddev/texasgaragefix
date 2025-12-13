@@ -138,6 +138,7 @@ export default function PrivacyPolicy() {
             <a href="/privacy-policy" className="text-smokey hover:text-tn-orange transition">Privacy Policy</a>
           </div>
         </div>
+        <p className="text-sm text-gray-500 mt-4 text-center">&copy; 2025 Texas Garage Fix</p>
       </footer>
     </div>
   );
