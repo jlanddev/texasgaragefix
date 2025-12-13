@@ -184,6 +184,9 @@ export default function HomePage() {
                   <h2 className="text-4xl font-black text-smokey leading-tight">
                     REQUEST SERVICE<br/>GET A FREE QUOTE
                   </h2>
+                  <p className="text-gray-600 text-sm mt-3">
+                    Join 1,000+ Houston homeowners who found help today
+                  </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
