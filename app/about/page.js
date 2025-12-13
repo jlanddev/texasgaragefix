@@ -58,9 +58,9 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="border-l-4 border-tn-orange pl-6 relative group">
               <div className="absolute -left-1 top-0 w-8 h-8 bg-tn-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <h3 className="text-2xl font-black mb-3">FAST RESPONSE</h3>
+              <h3 className="text-2xl font-black mb-3">QUICK CONNECT</h3>
               <p className="text-lg">
-                We call you back in under 10 minutes. Most repairs done same day. No waiting around.
+                Get connected with local contractors fast. Same-day service available. No waiting around.
               </p>
             </div>
             <div className="border-l-4 border-tn-orange pl-6 relative group">
@@ -147,7 +147,7 @@ export default function AboutPage() {
               READY TO GET STARTED?
             </h2>
             <p className="text-xl mb-8">
-              Fill out the form. We'll call in 10 minutes.
+              Fill out the form. Get connected with a local pro.
             </p>
             <a
               href="/"
@@ -168,8 +168,8 @@ export default function AboutPage() {
               <div className="text-sm uppercase tracking-wide">Repairs This Month</div>
             </div>
             <div className="border-r border-gray-700">
-              <div className="text-5xl font-black text-tn-orange mb-2">&lt;10</div>
-              <div className="text-sm uppercase tracking-wide">Minute Callback</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">FAST</div>
+              <div className="text-sm uppercase tracking-wide">Response Time</div>
             </div>
             <div>
               <div className="text-5xl font-black text-tn-orange mb-2">24/7</div>

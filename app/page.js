@@ -68,10 +68,10 @@ export default function HomePage() {
         <div className="max-w-2xl w-full text-center">
           <div className="text-8xl mb-8">✓</div>
           <h1 className="text-5xl font-black text-gray-900 mb-4">WE GOT IT</h1>
-          <p className="text-2xl text-gray-700 mb-8">A local garage door pro will call you within 10 minutes</p>
+          <p className="text-2xl text-gray-700 mb-8">A local garage door pro will be in touch shortly</p>
           <div className="bg-gray-50 p-8">
             <p className="text-xl font-bold text-gray-900">
-              Keep your phone handy - you'll be connected with a technician shortly
+              Keep your phone handy - a contractor will reach out soon
             </p>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function HomePage() {
                   BROKEN GARAGE DOOR?
                 </div>
                 <div className="text-2xl leading-relaxed">
-                  We connect you with a <span className="text-tn-orange font-black">local tech</span> in <span className="text-tn-orange font-black">10 minutes</span>
+                  Get connected with a <span className="text-tn-orange font-black">local tech</span> <span className="text-tn-orange font-black">fast</span>
                 </div>
               </div>
 
@@ -143,8 +143,8 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-xl font-bold">Same-Day Service</div>
-                    <div className="text-gray-300">Most repairs done today</div>
+                    <div className="text-xl font-bold">Same-Day Available</div>
+                    <div className="text-gray-300">Contractors ready to help today</div>
                   </div>
                 </div>
 
@@ -171,9 +171,9 @@ export default function HomePage() {
             <div className="lg:sticky lg:top-8">
               <div className="bg-white p-10 shadow-2xl">
                 <div className="text-center mb-8">
-                  <div className="text-tn-orange font-black text-sm mb-3 uppercase tracking-widest">FAST RESPONSE</div>
+                  <div className="text-tn-orange font-black text-sm mb-3 uppercase tracking-widest">EMERGENCY SERVICE AVAILABLE</div>
                   <h2 className="text-4xl font-black text-smokey leading-tight">
-                    GET CONNECTED<br/>IN 10 MINUTES
+                    REQUEST SERVICE<br/>GET A FREE QUOTE
                   </h2>
                 </div>
 
@@ -310,12 +310,16 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-cream py-8">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <img src="/logo.png" alt="Texas Garage Fix" className="h-12" />
           <div className="flex gap-8 text-sm uppercase font-bold">
             <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
             <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
             <a href="/about" className="text-smokey hover:text-tn-orange transition">ABOUT</a>
+          </div>
+          <div className="flex gap-6 text-sm">
+            <a href="/terms-of-use" className="text-smokey hover:text-tn-orange transition">Terms of Use</a>
+            <a href="/privacy-policy" className="text-smokey hover:text-tn-orange transition">Privacy Policy</a>
           </div>
         </div>
       </footer>

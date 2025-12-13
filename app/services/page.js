@@ -12,7 +12,7 @@ export default function ServicesPage() {
     },
     {
       question: "How Quickly Can a Technician Arrive for an Emergency Repair?",
-      answer: "We respond fast. After you submit a request, expect a callback within 10 minutes and same-day service for most emergency repairs in the Houston metro area."
+      answer: "We connect you with local contractors quickly. After you submit a request, a contractor will reach out and same-day service is available for most emergency repairs in the Houston metro area."
     },
     {
       question: "Can I Attempt to Repair My Garage Door on My Own?",
@@ -24,7 +24,7 @@ export default function ServicesPage() {
     },
     {
       question: "Do Emergency Repair Services Include Fixing Garage Door Openers?",
-      answer: "Yes! Our emergency services cover everything from broken springs and cables to malfunctioning garage door openers and remotes. Whatever's wrong, we'll fix it fast and right."
+      answer: "Yes! Our emergency services cover everything from broken springs and cables to malfunctioning garage door openers and remotes. Whatever's wrong, our contractors will get it fixed."
     },
     {
       question: "How Can I Maintain My Garage Door to Prevent Emergencies?",
@@ -210,7 +210,7 @@ export default function ServicesPage() {
               NEED SERVICE TODAY?
             </h2>
             <p className="text-xl mb-8">
-              Fill out the form. We call in 10 minutes.
+              Fill out the form. Get connected with a local pro.
             </p>
             <a
               href="/"
@@ -321,8 +321,8 @@ export default function ServicesPage() {
               <div className="text-sm uppercase tracking-wide">Repairs This Month</div>
             </div>
             <div className="border-r border-gray-600">
-              <div className="text-5xl font-black text-tn-orange mb-2">&lt;10</div>
-              <div className="text-sm uppercase tracking-wide">Minute Callback</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">FAST</div>
+              <div className="text-sm uppercase tracking-wide">Response Time</div>
             </div>
             <div>
               <div className="text-5xl font-black text-tn-orange mb-2">24/7</div>
