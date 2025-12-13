@@ -2,18 +2,24 @@ import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 import twilio from 'twilio';
 
-// Use service role key for full database access (bypass RLS)
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
-);
+// Lazy initialization to avoid build-time errors
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+}
 
-const twilioClient = twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
+function getTwilioClient() {
+  return twilio(
+    process.env.TWILIO_ACCOUNT_SID,
+    process.env.TWILIO_AUTH_TOKEN
+  );
+}
 
 export async function POST(request) {
+  const supabase = getSupabase();
+  const twilioClient = getTwilioClient();
   try {
     const leadData = await request.json();
     

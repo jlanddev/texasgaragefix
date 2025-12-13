@@ -1,12 +1,15 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY
-);
+function getSupabase() {
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.SUPABASE_SERVICE_ROLE_KEY
+  );
+}
 
 export async function GET(request) {
+  const supabase = getSupabase();
   const { searchParams } = new URL(request.url);
   const county = searchParams.get('county') || 'Harris';
   const jobType = searchParams.get('jobType') || 'residential';
