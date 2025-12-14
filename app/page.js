@@ -89,7 +89,7 @@ export default function HomePage() {
       <div className="bg-cream px-6 py-3 flex items-center justify-between">
         <img src="/logo.png" alt="Texas Garage Fix" className="h-14" />
         <div className="flex items-center gap-8">
-          <a href="tel:4696403864" className="text-smokey font-bold text-sm tracking-wider hidden sm:block hover:text-tn-orange transition">Call Us Anytime! (469) 640-3864</a>
+          <a href="tel:4696403864" className="bg-tn-orange text-white font-bold text-sm tracking-wider hidden sm:block px-4 py-2 hover:bg-opacity-90 transition">Call Us Anytime! (469) 640-3864</a>
           <div className="flex gap-6 text-sm font-bold uppercase tracking-wide">
             <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
             <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
@@ -106,7 +106,7 @@ export default function HomePage() {
           style={{
             backgroundImage: `url(/hero-bg.png)`,
             backgroundSize: 'cover',
-            backgroundPosition: 'right center',
+            backgroundPosition: 'center center',
             transform: `translateY(${scrollY * 0.3}px)`,
             willChange: 'transform'
           }}
