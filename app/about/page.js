@@ -9,7 +9,7 @@ export default function AboutPage() {
           <img src="/logo.png" alt="Texas Garage Fix" className="h-14" />
         </a>
         <div className="flex items-center gap-8">
-          <div className="text-smokey font-bold text-sm uppercase tracking-wider hidden sm:block">24/7 EMERGENCY SERVICE</div>
+          <a href="tel:4696403864" className="text-smokey font-bold text-sm tracking-wider hidden sm:block hover:text-tn-orange transition">Call Us Anytime! (469) 640-3864</a>
           <div className="flex gap-6 text-sm font-bold uppercase tracking-wide">
             <a href="/" className="text-smokey hover:text-tn-orange transition">HOME</a>
             <a href="/services" className="text-smokey hover:text-tn-orange transition">SERVICES</a>
