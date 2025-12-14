@@ -123,7 +123,7 @@ export default function HomePage() {
                   Houston Garage Door<br/>Repair Services
                 </h1>
                 <div className="text-xl leading-relaxed text-gray-200">
-                  Connect with licensed local contractors for repairs, installations, and emergency service across the Houston metro area.
+                  Connect with vetted local contractors for repairs, installations, and emergency service across the Houston metro area.
                 </div>
               </div>
 

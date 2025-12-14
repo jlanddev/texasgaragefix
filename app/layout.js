@@ -2,7 +2,7 @@ import './globals.css'
 
 export const metadata = {
   title: 'Texas Garage Fix - Fast Garage Door Repair & Installation',
-  description: 'Emergency garage door repair in Houston. Licensed contractors respond in minutes. Springs, openers, installations. Call now!',
+  description: 'Emergency garage door repair in Houston. Vetted contractors respond fast. Springs, openers, installations. Get a free quote!',
 }
 
 export default function RootLayout({ children }) {
