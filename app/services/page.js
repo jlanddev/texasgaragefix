@@ -7,36 +7,36 @@ export default function ServicesPage() {
 
   const faqs = [
     {
-      question: "What Qualifies as an Emergency Garage Door Repair?",
-      answer: "Any issue that prevents your garage door from opening or closing safely can be considered an emergency, especially if it poses a security risk, safety hazard, or major inconvenience to your daily routine."
+      question: "What services do your contractors offer?",
+      answer: "Our network of contractors offers a full range of garage door services including spring replacement, opener repair and installation, cable and roller replacement, panel repair, full door installation, and preventive maintenance."
     },
     {
-      question: "How Quickly Can a Technician Arrive for an Emergency Repair?",
-      answer: "We connect you with local contractors quickly. After you submit a request, a contractor will reach out and same-day service is available for most emergency repairs in the Houston metro area."
+      question: "How does Texas Garage Fix work?",
+      answer: "We connect you with vetted local contractors in the Houston metro area. Simply fill out our form, describe your issue, and a contractor will reach out to provide a free quote."
     },
     {
-      question: "Can I Attempt to Repair My Garage Door on My Own?",
-      answer: "We don't recommend it. Garage doors have high-tension springs and complex mechanisms that can cause serious injury if handled improperly. It's always best to leave emergency garage door repair to trained professionals."
+      question: "Can I attempt to repair my garage door on my own?",
+      answer: "We don't recommend it. Garage doors have high-tension springs and complex mechanisms that can cause serious injury if handled improperly. It's always best to leave garage door repair to trained professionals."
     },
     {
-      question: "Will My Garage Door Warranty Cover Emergency Repairs?",
-      answer: "It depends on your door's manufacturer and warranty terms. Our team can help assess your coverage and provide a clear breakdown of the emergency garage door repair cost before starting any work."
+      question: "Will my garage door warranty cover repairs?",
+      answer: "It depends on your door's manufacturer and warranty terms. Our contractors can help assess your coverage and provide a clear breakdown of repair costs before starting any work."
     },
     {
-      question: "Do Emergency Repair Services Include Fixing Garage Door Openers?",
-      answer: "Yes! Our emergency services cover everything from broken springs and cables to malfunctioning garage door openers and remotes. Whatever's wrong, our contractors will get it fixed."
+      question: "Do your contractors fix garage door openers?",
+      answer: "Yes! Our contractors handle everything from broken springs and cables to malfunctioning garage door openers and remotes. Whatever's wrong, they can get it fixed."
     },
     {
-      question: "How Can I Maintain My Garage Door to Prevent Emergencies?",
+      question: "How can I maintain my garage door?",
       answer: "Schedule regular maintenance! We recommend professional tune-ups once or twice a year to lubricate parts, check alignment, tighten hardware, and prevent problems before they start."
     },
     {
-      question: "What Should I Do If My Garage Door Is Stuck Open or Closed?",
-      answer: "First, ensure the opener is plugged in and check the batteries in your remote. If the problem persists, don't try to force it – this can cause more damage. Call us right away, and we'll get your door working again safely."
+      question: "What should I do if my garage door is stuck?",
+      answer: "First, ensure the opener is plugged in and check the batteries in your remote. If the problem persists, don't try to force it – this can cause more damage. Submit a request and a contractor will help."
     },
     {
-      question: "How Do I Find the Best Emergency Garage Door Repair Near Me?",
-      answer: "When you search online for same-day fast repair or emergency garage door replacement services, there's no shortage of options, but you need an expert team you can trust. Texas Garage Fix provides honest, fairly priced services that put customer satisfaction first."
+      question: "What areas do you serve?",
+      answer: "We serve the Houston metro area including Harris, Montgomery, Fort Bend, Waller, Brazoria, and Liberty counties."
     }
   ];
 
@@ -55,7 +55,7 @@ export default function ServicesPage() {
         "Torsion springs",
         "Extension springs",
         "High-cycle upgrades",
-        "Same-day service",
+        "Professional service",
         "All brands"
       ]
     },
@@ -111,7 +111,7 @@ export default function ServicesPage() {
       ]
     },
     {
-      title: "Emergency Repairs",
+      title: "Full Service Repairs",
       // Alert/siren icon
       icon: (
         <svg className="w-16 h-16 mb-4 opacity-20 group-hover:opacity-30" fill="currentColor" viewBox="0 0 24 24">
@@ -123,8 +123,8 @@ export default function ServicesPage() {
         "Door won't close",
         "Security issues",
         "Broken springs",
-        "Fast response",
-        "Night & weekend service"
+        "Off-track doors",
+        "All repair types"
       ]
     },
     {
@@ -241,13 +241,13 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-12">
             <div className="inline-block bg-smokey text-white px-6 py-2 font-black text-sm mb-6 transform rotate-1">
-              EMERGENCY SERVICE AVAILABLE
+              COMMON QUESTIONS
             </div>
             <h2 className="text-5xl lg:text-6xl font-black text-smokey mb-4">
               GARAGE DOOR FAQs
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Need answers about emergency garage door services? We've got you covered.
+              Need answers about garage door services? We've got you covered.
             </p>
           </div>
 
@@ -321,12 +321,12 @@ export default function ServicesPage() {
               <div className="text-sm uppercase tracking-wide">Repairs This Month</div>
             </div>
             <div className="border-r border-gray-600">
-              <div className="text-5xl font-black text-tn-orange mb-2">FAST</div>
-              <div className="text-sm uppercase tracking-wide">Response Time</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">6</div>
+              <div className="text-sm uppercase tracking-wide">Counties Served</div>
             </div>
             <div>
-              <div className="text-5xl font-black text-tn-orange mb-2">24/7</div>
-              <div className="text-sm uppercase tracking-wide">Emergency Service</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">100%</div>
+              <div className="text-sm uppercase tracking-wide">Free Quotes</div>
             </div>
           </div>
         </div>

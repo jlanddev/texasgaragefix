@@ -58,9 +58,9 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="border-l-4 border-tn-orange pl-6 relative group">
               <div className="absolute -left-1 top-0 w-8 h-8 bg-tn-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <h3 className="text-2xl font-black mb-3">QUICK CONNECT</h3>
+              <h3 className="text-2xl font-black mb-3">EASY CONNECT</h3>
               <p className="text-lg">
-                Get connected with local contractors fast. Same-day service available. No waiting around.
+                Get connected with local contractors easily. Fill out a form and get a quote.
               </p>
             </div>
             <div className="border-l-4 border-tn-orange pl-6 relative group">
@@ -79,9 +79,9 @@ export default function AboutPage() {
             </div>
             <div className="border-l-4 border-tn-orange pl-6 relative group">
               <div className="absolute -left-1 top-0 w-8 h-8 bg-tn-orange opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <h3 className="text-2xl font-black mb-3">24/7 EMERGENCY</h3>
+              <h3 className="text-2xl font-black mb-3">ALL SERVICES</h3>
               <p className="text-lg">
-                Door stuck open at midnight? Spring broke on Sunday? We handle emergencies any time.
+                Door stuck? Spring broke? We connect you with pros who handle all garage door issues.
               </p>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
               </svg>
               <h3 className="text-2xl font-black mb-4">REPAIRS</h3>
               <p className="text-lg">
-                Springs, cables, panels, tracks, rollers - we fix it all. Same-day available.
+                Springs, cables, panels, tracks, rollers - we connect you with pros who fix it all.
               </p>
             </div>
             <div className="bg-smokey text-white p-8 relative overflow-hidden group">
@@ -168,12 +168,12 @@ export default function AboutPage() {
               <div className="text-sm uppercase tracking-wide">Repairs This Month</div>
             </div>
             <div className="border-r border-gray-700">
-              <div className="text-5xl font-black text-tn-orange mb-2">FAST</div>
-              <div className="text-sm uppercase tracking-wide">Response Time</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">6</div>
+              <div className="text-sm uppercase tracking-wide">Counties Served</div>
             </div>
             <div>
-              <div className="text-5xl font-black text-tn-orange mb-2">24/7</div>
-              <div className="text-sm uppercase tracking-wide">Emergency Service</div>
+              <div className="text-5xl font-black text-tn-orange mb-2">100%</div>
+              <div className="text-sm uppercase tracking-wide">Free Quotes</div>
             </div>
           </div>
         </div>

@@ -283,7 +283,7 @@ ZIP: ${leadData.zip}
 Type: ${leadData.jobType}
 Issue: ${leadData.issue}
 
-CALL NOW - They're expecting your call within 10 minutes!`.trim();
+Please reach out to this lead.`.trim();
 
     try {
       await twilioClient.messages.create({

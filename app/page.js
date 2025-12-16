@@ -123,7 +123,7 @@ export default function HomePage() {
                   Houston Garage Door<br/>Repair Services
                 </h1>
                 <div className="text-xl leading-relaxed text-gray-200">
-                  Connect with vetted local contractors for repairs, installations, and emergency service across the Houston metro area.
+                  Connect with vetted local contractors for repairs, installations, and service across the Houston metro area.
                 </div>
               </div>
 
@@ -147,8 +147,8 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-xl font-bold">Same-Day Available</div>
-                    <div className="text-gray-300">Contractors ready to help today</div>
+                    <div className="text-xl font-bold">Licensed & Insured</div>
+                    <div className="text-gray-300">Professional contractors only</div>
                   </div>
                 </div>
 
@@ -175,7 +175,6 @@ export default function HomePage() {
             <div className="lg:sticky lg:top-8">
               <div className="bg-white p-10 shadow-2xl">
                 <div className="text-center mb-8">
-                  <div className="text-tn-orange font-black text-sm mb-3 uppercase tracking-widest">Same-Day Service Available</div>
                   <h2 className="text-4xl font-black text-smokey leading-tight">
                     Get a Free Quote
                   </h2>
