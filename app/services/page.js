@@ -308,30 +308,6 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="bg-smokey text-white py-12 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-tn-orange rounded-full -translate-x-32 -translate-y-32"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-tn-orange rounded-full translate-x-48 translate-y-48"></div>
-        </div>
-        <div className="container mx-auto px-4 max-w-7xl relative">
-          <div className="grid grid-cols-3 gap-8 text-center">
-            <div className="border-r border-gray-600">
-              <div className="text-5xl font-black text-tn-orange mb-2">500+</div>
-              <div className="text-sm uppercase tracking-wide">Repairs This Month</div>
-            </div>
-            <div className="border-r border-gray-600">
-              <div className="text-5xl font-black text-tn-orange mb-2">6</div>
-              <div className="text-sm uppercase tracking-wide">Counties Served</div>
-            </div>
-            <div>
-              <div className="text-5xl font-black text-tn-orange mb-2">100%</div>
-              <div className="text-sm uppercase tracking-wide">Free Quotes</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Footer */}
       <footer className="bg-cream py-8">
         <div className="max-w-7xl mx-auto px-6">
@@ -348,7 +324,7 @@ export default function ServicesPage() {
             </div>
           </div>
           <div className="border-t border-gray-300 pt-4 text-center">
-            <p className="text-sm text-gray-600 mb-1">440 Cobia Dr, Katy, TX 77494</p>
+            <p className="text-sm text-gray-600 mb-1">5900 Balcones Drive STE 100, Austin, TX 78731</p>
             <p className="text-sm text-gray-500">&copy; 2025 Texas Garage Fix. All rights reserved.</p>
           </div>
         </div>

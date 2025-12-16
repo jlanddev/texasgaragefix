@@ -330,7 +330,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="border-t border-gray-300 pt-4 text-center">
-            <p className="text-sm text-gray-600 mb-1">440 Cobia Dr, Katy, TX 77494</p>
+            <p className="text-sm text-gray-600 mb-1">5900 Balcones Drive STE 100, Austin, TX 78731</p>
             <p className="text-sm text-gray-500">&copy; 2025 Texas Garage Fix. All rights reserved.</p>
           </div>
         </div>
