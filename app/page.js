@@ -147,8 +147,8 @@ export default function HomePage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="text-xl font-bold">Licensed & Insured</div>
-                    <div className="text-gray-300">Professional contractors only</div>
+                    <div className="text-xl font-bold">Garage Door Experts</div>
+                    <div className="text-gray-300">Our contractors can diagnose and treat any garage door problem</div>
                   </div>
                 </div>
 
